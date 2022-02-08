@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mavenwebapppod
+  labels:
+    app: mavenwebapp
+  namespace: test-ns
+spec:
+  containers: 
+  - name: mavencontainer
+    image: docker2236/maven-web-application:1
+    ports:
+    - containerPort: 8080
+

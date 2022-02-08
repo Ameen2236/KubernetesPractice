@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: jaawebapprs
+  namespace: test-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: javawebapp
+  template: #pod template
+    metadata:
+        name: javawebapppod
+        labels:
+          app: javawebapp
+    spec:
+      containers:
+      - name: javawebappcontainer
+        image: docker2236/java-web-application:1
+        ports:
+        - containerPort: 8080
+
